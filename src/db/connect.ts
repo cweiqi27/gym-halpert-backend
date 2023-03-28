@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { env } from "../schema/env.schema.js";
+import { env } from "../schema/env.schema";
 
 export const connectDB = async () => {
   const dbUri = env.DATABASE_URI;

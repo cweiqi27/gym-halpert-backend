@@ -1,7 +1,7 @@
 import express from "express";
 import { connectDB } from "./db/connect";
 import routes from "./routes";
-import { env } from "./schema/env.schema.js";
+import { env } from "./schema/env.schema";
 import logger from "./utils/logger";
 
 const app = express();
