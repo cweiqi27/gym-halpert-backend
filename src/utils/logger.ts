@@ -1,12 +1,12 @@
 import pino from "pino";
-import { formatISO } from "date-fns";
 
 const logger = pino({
   transport: {
     target: "pino-pretty",
     options: {
       colorize: true,
-      timestampKey: "time",
+      translateTime: "SYS:d/m/yy h:MM TT",
+      ignore: "pid,hostname",
     },
   },
 });
