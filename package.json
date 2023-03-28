@@ -1,7 +1,7 @@
 {
   "name": "gym-halpert-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "license": "MIT",
   "dependencies": {
     "@types/node": "^18.15.10",
