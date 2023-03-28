@@ -13,8 +13,8 @@
     "zod": "^3.21.4"
   },
   "scripts": {
-    "build": "ts-node src/server.ts",
-    "start": "nodemon src/server.ts"
+    "start": "ts-node src/server.ts",
+    "dev": "nodemon src/server.ts"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
