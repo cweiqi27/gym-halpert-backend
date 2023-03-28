@@ -1,6 +1,6 @@
 import express from "express";
 import { connectDB } from "./db/connect";
-import routes from "./routes";
+import routes from "./routes/app";
 import { env } from "./schema/env.schema";
 import logger from "./utils/logger";
 
@@ -10,7 +10,7 @@ const port = env.PORT;
 app.use(express.json());
 
 app.listen(port, async () => {
-  logger.info(`⚡️[server]: Server is running at http://localhost:${port}`);
+  logger.info(`[server]: Server is running at http://localhost:${port}`);
   await connectDB();
 
   routes(app);
