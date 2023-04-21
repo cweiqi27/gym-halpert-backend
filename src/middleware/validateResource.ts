@@ -1,7 +1,7 @@
 import type { NextFunction, Request, Response } from "express";
 import type { AnyZodObject } from "zod";
 
-const validate =
+const validateResource =
   (schema: AnyZodObject) =>
   (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -16,4 +16,4 @@ const validate =
     }
   };
 
-export default validate;
+export default validateResource;

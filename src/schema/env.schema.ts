@@ -7,7 +7,8 @@ const serverSchema = z
   .object({
     DATABASE_URI: z.string().url(),
     PORT: z.string(),
-    SALT_ROUNDS: z.string(),
+    CLERK_SECRET_KEY: z.string(),
+    CLERK_SYNC_WEBHOOK_SIGNING_SECRET: z.string(),
   })
   .safeParse(process.env);
 
