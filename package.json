@@ -1,8 +1,13 @@
 {
   "name": "gym-halpert-backend",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "server.ts",
   "license": "MIT",
+  "author": {
+    "name": "Chan Wei Qi",
+    "email": "chanweiqi27@gmail.com",
+    "url": "https://github.com/cweiqi27"
+  },
   "dependencies": {
     "@clerk/clerk-sdk-node": "^4.8.2",
     "@types/node": "^18.15.10",
@@ -17,7 +22,9 @@
   },
   "scripts": {
     "start": "ts-node src/server.ts",
-    "dev": "nodemon src/server.ts"
+    "dev": "nodemon src/server.ts",
+    "generate": "ts-node src/scripts/generate.ts",
+    "delete": "ts-node src/scripts/delete.ts"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.2",
