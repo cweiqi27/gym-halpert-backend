@@ -1,46 +1,18 @@
 import type { Document } from "mongoose";
 import { Schema, model } from "mongoose";
-import { env } from "../schema/env.schema";
-import bcrypt from "bcrypt";
 
 export interface UserDocument extends Partial<Document> {
-  name: string;
-  email: string;
-  password: string;
-  image?: string | null;
+  externalId: string;
   createdAt: Date;
   updatedAt: Date;
 }
 
 const userSchema = new Schema<UserDocument>({
-  name: { type: String, required: true },
-  email: { type: String, required: true },
-  password: { type: String, required: true },
-  image: String,
-  createdAt: Date,
-  updatedAt: Date,
+  externalId: { type: String, unique: true },
+  createdAt: { type: Date, default: Date.now() },
+  updatedAt: { type: Date, default: Date.now() },
 });
 
-userSchema.pre("save", async function (next: (err?: Error) => void) {
-  const _user = this as UserDocument;
-
-  if (!_user.isModified) return next();
-
-  const saltRounds = parseInt(env.SALT_ROUNDS);
-
-  bcrypt.genSalt(saltRounds, function (err, salt) {
-    _user.password = salt;
-    return next(err);
-  });
-});
-
-userSchema.method(
-  "comparePassword",
-  async function (candidatePassword: string) {
-    return await bcrypt.compare(candidatePassword, this.password);
-  }
-);
-
-const User = model("User", userSchema);
+const User = model<UserDocument>("User", userSchema);
 
 export default User;

@@ -3,7 +3,6 @@
   "plugins": ["@typescript-eslint"],
   "extends": "plugin:@typescript-eslint/recommended",
   "overrides": [],
-  "ignorePatterns": ["dist/*"],
   "rules": {
     "@typescript-eslint/consistent-type-imports": "warn"
   }

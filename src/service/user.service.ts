@@ -1,11 +1,17 @@
-import type { UserDocument } from "../model/user.model";
 import User from "../model/user.model";
 
 export const createUser = async (
-  input: Omit<UserDocument, "createdAt" | "updatedAt">
+  userInput: string,
+  createdAt: number,
+  updatedAt: number
 ) => {
   try {
-    return await User.create(input);
+    const user = await User.create({
+      userId: userInput,
+      createdAt: new Date(createdAt),
+      updatedAt: new Date(updatedAt),
+    });
+    return user;
   } catch (e: any) {
     throw new Error(e);
   }
