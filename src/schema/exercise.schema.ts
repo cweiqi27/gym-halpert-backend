@@ -5,12 +5,10 @@ export const createExerciseSchema = z.object({
     name: z.string({
       required_error: "Exercise name is required.",
     }),
-    description: z.string().nullish(),
-    image: z.string().nullish(),
+    description: z.string().optional(),
+    image: z.string().optional(),
     bodyParts: z.array(z.string()),
-    type: z.string({
-      required_error: "Exercise type is required.",
-    }),
+    equipment: z.string().optional(),
     difficulty: z.number({
       required_error: "Exercise difficulty is required.",
     }),

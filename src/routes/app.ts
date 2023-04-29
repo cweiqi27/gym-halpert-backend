@@ -1,6 +1,5 @@
 import type { Express } from "express";
 import { exerciseRoutes } from "./exercise";
-// import { userRoutes } from "./user";
 import { clerkRoutes } from "./clerk";
 import { workoutRoutes } from "./workout";
 
